@@ -1,13 +1,9 @@
-/* =========================================
-   Tizim Ranglari (Eye-Comfort 50% qo'llanilgan)
-   ========================================= */
 :root {
     --primary: #007AFF; 
     --accent: #5E5CE6; 
     --success: #34C759; 
     --warning: #FF9500; 
     --error: #FF3B30; 
-    
     --bg: #F4F5F0; 
     --card: #FCFBF8;
     --text: #2C3E50;
@@ -50,8 +46,6 @@ body.dark-mode .glass-effect { background: rgba(26, 29, 36, 0.7); border: 1px so
 @keyframes slideUp { from { transform: translateY(30px); opacity: 0; filter: blur(5px); } to { transform: translateY(0); opacity: 1; filter: blur(0); } }
 .pulse { animation: pulse 2s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 122, 255, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(0, 122, 255, 0); } 100% { box-shadow: 0 0 0 0; } }
-.gravity-fall { animation: fallDown 1.5s forwards ease-in; pointer-events: none; }
-@keyframes fallDown { to { transform: translateY(100vh) rotate(15deg); opacity: 0; } }
 
 @keyframes magicCorrect { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.8); } 50% { transform: scale(1.03); box-shadow: 0 0 25px 5px rgba(52, 199, 89, 0.3); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 199, 89, 0); } }
 @keyframes magicWrong { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-6px); box-shadow: 0 0 15px rgba(255, 59, 48, 0.4); } 40%, 80% { transform: translateX(6px); box-shadow: 0 0 15px rgba(255, 59, 48, 0.4); } }

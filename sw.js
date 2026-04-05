@@ -4,7 +4,7 @@ const urlsToCache = [
   '/index.html',
   '/style.css',
   '/script.js',
-  '/logo.jpg',
+  '/logo.png',
   '/bino.png',
   '/musiqa_nazariyasi.json',
   '/cholgu_ijrochiligi.json',

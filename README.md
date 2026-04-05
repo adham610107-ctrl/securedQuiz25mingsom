@@ -1,2 +1,0 @@
-# securedQuiz25mingsom
-test

@@ -1,180 +1,180 @@
 <!DOCTYPE html>
-<html lang=\"uz\">
+<html lang="uz">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PRO EXAM v7.5 Ultimate Edition</title>
     
-    <link rel=\"manifest\" href=\"manifest.json\">
-    <meta name=\"theme-color\" content=\"#007AFF\">
-    <link rel=\"apple-touch-icon\" href=\"logo.jpg\">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007AFF">
+    <link rel="apple-touch-icon" href="logo.png">
     
-    <script src=\"https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js\"></script>
-    <link rel=\"stylesheet\" href=\"style.css\">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class=\"light-mode\" id=\"main-body\" oncontextmenu=\"return false;\">
+<body class="light-mode" id="main-body" oncontextmenu="return false;">
 
-    <div id=\"auth-screen\" class=\"screen active\">
-        <div class=\"hero-overlay\">
-            <div class=\"hero-card glass-effect slide-up\">
-                <img src=\"logo.jpg\" alt=\"Logo\" class=\"main-logo\" onerror=\"this.style.display='none'\">
-                <div class=\"hero-badge\" style=\"background: var(--warning);\">Yopiq Tizim</div>
-                <h1 class=\"main-title\">Tizimga kirish</h1>
-                <p class=\"hero-subtitle\">Yangi foydalanuvchilar: Keygen, Login va Parol kiriting. <br>Eski foydalanuvchilar: Faqat Login va Parol kiriting.</p>
+    <div id="auth-screen" class="screen active">
+        <div class="hero-overlay">
+            <div class="hero-card glass-effect slide-up">
+                <img src="logo.png" alt="Logo" class="main-logo" onerror="this.style.display='none'">
+                <div class="hero-badge" style="background: var(--warning);">Yopiq Tizim</div>
+                <h1 class="main-title">Tizimga kirish</h1>
+                <p class="hero-subtitle">Yangi foydalanuvchilar: Keygen, Login va Parol kiriting. <br>Eski foydalanuvchilar: Faqat Login va Parol kiriting.</p>
                 
-                <div class=\"login-form\">
-                    <input type=\"text\" id=\"auth-login\" class=\"premium-input\" placeholder=\"O'zingizga qulay Login\" autocomplete=\"off\">
-                    <input type=\"password\" id=\"auth-password\" class=\"premium-input\" placeholder=\"Kuchli Parol\" autocomplete=\"off\">
-                    <input type=\"text\" id=\"auth-keygen\" class=\"premium-input\" placeholder=\"Keygen (Faqat birinchi marta uchun)\" autocomplete=\"off\">
-                    <button class=\"btn-start pulse\" id=\"btn-auth\" onclick=\"authenticateUser()\">Kirish 🔒</button>
-                    <p id=\"auth-error\" class=\"text-error hidden\" style=\"font-size: 0.9rem; margin-top: 10px; font-weight: bold;\"></p>
+                <div class="login-form">
+                    <input type="text" id="auth-login" class="premium-input" placeholder="O'zingizga qulay Login" autocomplete="off">
+                    <input type="password" id="auth-password" class="premium-input" placeholder="Kuchli Parol" autocomplete="off">
+                    <input type="text" id="auth-keygen" class="premium-input" placeholder="Keygen (Faqat birinchi marta uchun)" autocomplete="off">
+                    <button class="btn-start pulse" id="btn-auth" onclick="authenticateUser()">Kirish 🔒</button>
+                    <p id="auth-error" class="text-error hidden" style="font-size: 0.9rem; margin-top: 10px; font-weight: bold;"></p>
                 </div>
             </div>
-            <footer class=\"app-footer-welcome\">Adham's copyright 2026 &copy;</footer>
+            <footer class="app-footer-welcome">Adham's copyright 2026 &copy;</footer>
         </div>
     </div>
 
-    <div id=\"welcome-screen\" class=\"screen hidden\">
-        <div class=\"hero-overlay\">
-            <div class=\"hero-card glass-effect slide-up\">
-                <img src=\"logo.jpg\" alt=\"Logo\" class=\"main-logo\" onerror=\"this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='\">
-                <div class=\"hero-badge\">Shaxsiy Loyiha</div>
-                <h1 class=\"main-title\">Xush kelibsiz!</h1>
-                <p class=\"hero-subtitle\">
+    <div id="welcome-screen" class="screen hidden">
+        <div class="hero-overlay">
+            <div class="hero-card glass-effect slide-up">
+                <img src="logo.png" alt="Logo" class="main-logo" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='">
+                <div class="hero-badge">Shaxsiy Loyiha</div>
+                <h1 class="main-title">Xush kelibsiz!</h1>
+                <p class="hero-subtitle">
                     Bu sayt nima vazifani bajaradi? Ushbu platforma mening shaxsiy loyiham bo'lib, sizni yakuniy imtihonlarga mukammal tayyorlash, bilimlaringizni sinash va xatolar ustida mustaqil ishlash imkoniyatini beradi.<br><br>
-                    <b>Chirchiq davlat pedagogika universiteti talabalari uchun maxsus ishlab chiqilgan professional tayyorgarlik tizimi.</b>
+                    <b>Talabalar uchun maxsus ishlab chiqilgan professional tayyorgarlik tizimi.</b>
                 </p>
-                <div class=\"rules-box\">
+                <div class="rules-box">
                     <p>✅ <b>Qoida:</b> Testni yakunlash uchun o'zingizni sinab ko'ring.</p>
                     <p>✅ <b>Yashirin Javob:</b> Xato qilsangiz, to'g'ri javob ko'rsatilmaydi! Mustaqil izlab topishingiz zarur.</p>
                 </div>
                 
-                <div class=\"login-form\">
-                    <input type=\"text\" id=\"student-name\" class=\"premium-input\" placeholder=\"Ism familiyangizni kiriting...\" autocomplete=\"off\" readonly>
-                    <button class=\"btn-start pulse\" onclick=\"handleLogin()\">Platformaga kirish</button>
+                <div class="login-form">
+                    <input type="text" id="student-name" class="premium-input" placeholder="Ism familiyangizni kiriting..." autocomplete="off">
+                    <button class="btn-start pulse" onclick="handleLogin()">Platformaga kirish</button>
                 </div>
 
-                <div class=\"social-links\">
-                    <a href=\"https://t.me/atamuratovs\" target=\"_blank\" class=\"social-btn\"><img src=\"tg.png\" alt=\"TG\" onerror=\"this.style.display='none'\"></a>
-                    <a href=\"https://www.instagram.com/strovln\" target=\"_blank\" class=\"social-btn\"><img src=\"insta.png\" alt=\"IG\" onerror=\"this.style.display='none'\"></a>
+                <div class="social-links">
+                    <a href="https://t.me/atamuratovs" target="_blank" class="social-btn"><img src="tg.png" alt="TG" onerror="this.style.display='none'"></a>
+                    <a href="https://www.instagram.com/strovln" target="_blank" class="social-btn"><img src="insta.png" alt="IG" onerror="this.style.display='none'"></a>
                 </div>
             </div>
-            <footer class=\"app-footer-welcome\">Adham's copyright 2026 &copy;</footer>
+            <footer class="app-footer-welcome">Adham's copyright 2026 &copy;</footer>
         </div>
     </div>
 
-    <nav class=\"global-nav hidden\" id=\"global-nav\">
-        <div class=\"logo-area\" onclick=\"logout()\" title=\"Bosh sahifa / Chiqish\">
-            <img src=\"logo.jpg\" alt=\"Logo\" class=\"nav-logo-mini\" onerror=\"this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='\">
-            <span class=\"logo-text\">PRO EXAM <span class=\"badge\">v7.5</span></span>
+    <nav class="global-nav hidden" id="global-nav">
+        <div class="logo-area" onclick="logout()" title="Bosh sahifa / Chiqish">
+            <img src="logo.png" alt="Logo" class="nav-logo-mini" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='">
+            <span class="logo-text">PRO EXAM <span class="badge">v7.5</span></span>
         </div>
-        <div class=\"nav-right\">
-            <button id=\"exit-test-btn\" class=\"exit-mini hidden\" onclick=\"confirmExit()\">🚪 Chiqish</button>
-            <div id=\"exam-timer\" class=\"timer-badge hidden\">00:00</div>
-            <button onclick=\"toggleTheme()\" class=\"theme-btn\" title=\"Kungi/Tungi rejim\">🌗</button>
+        <div class="nav-right">
+            <button id="exit-test-btn" class="exit-mini hidden" onclick="confirmExit()">🚪 Chiqish</button>
+            <div id="exam-timer" class="timer-badge hidden">00:00</div>
+            <button onclick="toggleTheme()" class="theme-btn" title="Kungi/Tungi rejim">🌗</button>
         </div>
     </nav>
 
-    <div id=\"dashboard-screen\" class=\"screen hidden\">
-        <div class=\"container main-content\">
-            <header class=\"dash-header slide-up\">
-                <h2>Salom, <span id=\"display-name\" class=\"text-primary\">Talaba</span>!</h2>
-                <div class=\"stats-row\">
-                    <div class=\"stat-card\">O'zlashtirildi: <b id=\"learned-count\" class=\"text-success\">0</b> <span class=\"max-total\" id=\"max-learned-total\">/ 800</span></div>
-                    <div class=\"stat-card\">Xatolar: <b id=\"error-count\" class=\"text-error\">0</b></div>
+    <div id="dashboard-screen" class="screen hidden">
+        <div class="container main-content">
+            <header class="dash-header slide-up">
+                <h2>Salom, <span id="display-name" class="text-primary">Talaba</span>!</h2>
+                <div class="stats-row">
+                    <div class="stat-card">O'zlashtirildi: <b id="learned-count" class="text-success">0</b> <span class="max-total" id="max-learned-total">/ 800</span></div>
+                    <div class="stat-card">Xatolar: <b id="error-count" class="text-error">0</b></div>
                 </div>
             </header>
 
-            <div class=\"category-grid slide-up\">
-                <button class=\"cat-btn\" onclick=\"openLevels('musiqa_nazariyasi', 'Musiqa nazariyasi')\">🎼 Musiqa nazariyasi</button>
-                <button class=\"cat-btn\" onclick=\"openLevels('cholgu_ijrochiligi', 'Cholg\\'u ijrochiligi')\">🎻 Cholg'u ijrochiligi</button>
-                <button class=\"cat-btn\" onclick=\"openLevels('vokal_ijrochiligi', 'Vokal ijrochiligi')\">🎤 Vokal ijrochiligi</button>
-                <button class=\"cat-btn\" onclick=\"openLevels('metodika_repertuar', 'Metodika')\">📚 Metodika</button>
+            <div class="category-grid slide-up">
+                <button class="cat-btn" onclick="openLevels('musiqa_nazariyasi', 'Musiqa nazariyasi')">🎼 Musiqa nazariyasi</button>
+                <button class="cat-btn" onclick="openLevels('cholgu_ijrochiligi', 'Cholg\'u ijrochiligi')">🎻 Cholg'u ijrochiligi</button>
+                <button class="cat-btn" onclick="openLevels('vokal_ijrochiligi', 'Vokal ijrochiligi')">🎤 Vokal ijrochiligi</button>
+                <button class="cat-btn" onclick="openLevels('metodika_repertuar', 'Metodika')">📚 Metodika</button>
                 
-                <button class=\"cat-btn btn-special\" onclick=\"prepareTest('mix_800')\">🎲 1-800 Aralash</button>
-                <button class=\"cat-btn btn-outline\" onclick=\"openChapters()\">📑 Bo'limlar (Boblar)</button>
-                <button id=\"error-work-btn\" class=\"cat-btn btn-error\" onclick=\"prepareTest('errors')\" disabled>🛠 Xatolar ustida ishlash</button>
-                <button class=\"cat-btn btn-exam pulse\" onclick=\"startExamMode()\">🎓 IMTIHON MODE (60)</button>
+                <button class="cat-btn btn-special" onclick="prepareTest('mix_800')">🎲 1-800 Aralash</button>
+                <button class="cat-btn btn-outline" onclick="openChapters()">📑 Bo'limlar (Boblar)</button>
+                <button id="error-work-btn" class="cat-btn btn-error" onclick="prepareTest('errors')" disabled>🛠 Xatolar ustida ishlash</button>
+                <button class="cat-btn btn-exam pulse" onclick="startExamMode()">🎓 IMTIHON MODE (60)</button>
             </div>
         </div>
-        <footer class=\"app-footer\">Adham's copyright 2026 &copy;</footer>
+        <footer class="app-footer">Adham's copyright 2026 &copy;</footer>
     </div>
 
-    <div id=\"modal-level\" class=\"modal-overlay\" onclick=\"closeModal(event, 'modal-level')\">
-        <div class=\"modal-content\">
-            <h2 id=\"modal-subject-title\" style=\"margin-bottom: 15px; font-weight:800; text-align:center;\">Fan</h2>
-            <div class=\"level-grid\" id=\"level-grid-box\"></div>
-            <button class=\"btn-start\" style=\"margin-top:15px; background:var(--bg); border:2px solid var(--primary); color:var(--primary);\" onclick=\"prepareTest('sub_mix')\">🎲 Fandan Aralash</button>
+    <div id="modal-level" class="modal-overlay" onclick="closeModal(event, 'modal-level')">
+        <div class="modal-content">
+            <h2 id="modal-subject-title" style="margin-bottom: 15px; font-weight:800; text-align:center;">Fan</h2>
+            <div class="level-grid" id="level-grid-box"></div>
+            <button class="btn-start" style="margin-top:15px; background:var(--bg); border:2px solid var(--primary); color:var(--primary);" onclick="prepareTest('sub_mix')">🎲 Fandan Aralash</button>
         </div>
     </div>
 
-    <div id=\"modal-chapters\" class=\"modal-overlay\" onclick=\"closeModal(event, 'modal-chapters')\">
-        <div class=\"modal-content\">
-            <h2 style=\"margin-bottom: 15px; font-weight:800; text-align:center;\">Barcha Boblar</h2>
-            <p style=\"text-align:center; color:var(--text-sec); font-size:0.9rem; margin-bottom:15px;\">Dinamik 800 talik baza</p>
-            <div class=\"level-grid\" id=\"chapters-grid-box\"></div>
+    <div id="modal-chapters" class="modal-overlay" onclick="closeModal(event, 'modal-chapters')">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 15px; font-weight:800; text-align:center;">Barcha Boblar</h2>
+            <p style="text-align:center; color:var(--text-sec); font-size:0.9rem; margin-bottom:15px;">Dinamik 800 talik baza</p>
+            <div class="level-grid" id="chapters-grid-box"></div>
         </div>
     </div>
 
-    <div id=\"setup-screen\" class=\"modal-overlay\" onclick=\"closeModal(event, 'setup-screen')\">
-        <div class=\"modal-content\">
-            <h2 style=\"text-align: center; margin-bottom: 25px; font-size: 1.5rem;\">⚙️ Test Parametrlari</h2>
-            <div class=\"setup-group\">
+    <div id="setup-screen" class="modal-overlay" onclick="closeModal(event, 'setup-screen')">
+        <div class="modal-content">
+            <h2 style="text-align: center; margin-bottom: 25px; font-size: 1.5rem;">⚙️ Test Parametrlari</h2>
+            <div class="setup-group">
                 <label>Qiyinlik darajasi (Vaqt):</label>
-                <div class=\"segmented-control difficulty-control\">
-                    <button class=\"seg-btn diff-easy active\" onclick=\"setDifficulty('easy', this)\">Oson</button>
-                    <button class=\"seg-btn diff-medium\" onclick=\"setDifficulty('medium', this)\">O'rtacha</button>
-                    <button class=\"seg-btn diff-hard\" onclick=\"setDifficulty('hard', this)\">Qiyin</button>
+                <div class="segmented-control difficulty-control">
+                    <button class="seg-btn diff-easy active" onclick="setDifficulty('easy', this)">Oson</button>
+                    <button class="seg-btn diff-medium" onclick="setDifficulty('medium', this)">O'rtacha</button>
+                    <button class="seg-btn diff-hard" onclick="setDifficulty('hard', this)">Qiyin</button>
                 </div>
             </div>
-            <div class=\"setup-group\">
+            <div class="setup-group">
                 <label>Ushbu qism uchun tartib:</label>
-                <div class=\"segmented-control order-control flex-col\">
-                    <button class=\"seg-btn order-opt order-random active\" onclick=\"setOrder('random', this)\">🎲 Savollarni aralashtirish</button>
-                    <button class=\"seg-btn order-opt order-seq\" onclick=\"setOrder('seq', this)\">⬇️ Ketma-ketlikda yechish</button>
+                <div class="segmented-control order-control flex-col">
+                    <button class="seg-btn order-opt order-random active" onclick="setOrder('random', this)">🎲 Savollarni aralashtirish</button>
+                    <button class="seg-btn order-opt order-seq" onclick="setOrder('seq', this)">⬇️ Ketma-ketlikda yechish</button>
                 </div>
-                <p class=\"small-note\">*Eslatma: Variantlar (A, B, C, D) doim aralashtiriladi!</p>
+                <p class="small-note">*Eslatma: Variantlar (A, B, C, D) doim aralashtiriladi!</p>
             </div>
-            <div class=\"setup-actions\">
-                <button class=\"btn-cancel\" onclick=\"closeModalDirect('setup-screen')\">Bekor qilish</button>
-                <button class=\"btn-start-test\" onclick=\"applySetup()\">Boshlash 🚀</button>
+            <div class="setup-actions">
+                <button class="btn-cancel" onclick="closeModalDirect('setup-screen')">Bekor qilish</button>
+                <button class="btn-start-test" onclick="applySetup()">Boshlash 🚀</button>
             </div>
         </div>
     </div>
 
-    <div id=\"modal-result\" class=\"modal-overlay\">
-        <div class=\"modal-content text-center\">
-            <h2 style=\"font-weight:900;\">Natija</h2>
-            <div class=\"donut\" id=\"result-donut\"><span id=\"result-percent\">0%</span></div>
-            <p class=\"res-msg\" id=\"result-msg\">Xabar</p>
-            <button class=\"btn-start\" style=\"margin-top:10px;\" onclick=\"goHome()\">Asosiy menyuga qaytish</button>
+    <div id="modal-result" class="modal-overlay">
+        <div class="modal-content text-center">
+            <h2 style="font-weight:900;">Natija</h2>
+            <div class="donut" id="result-donut"><span id="result-percent">0%</span></div>
+            <p class="res-msg" id="result-msg">Xabar</p>
+            <button class="btn-start" style="margin-top:10px;" onclick="goHome()">Asosiy menyuga qaytish</button>
         </div>
     </div>
 
-    <div id=\"test-screen\" class=\"screen hidden\">
-        <div class=\"progress-bar-container\"><div id=\"progress-fill\"></div></div>
+    <div id="test-screen" class="screen hidden">
+        <div class="progress-bar-container"><div id="progress-fill"></div></div>
         
-        <div class=\"container test-layout\">
-            <div class=\"map-container\">
-                <div class=\"map-title only-pc\">Savollar xaritasi</div>
-                <div id=\"indicator-map\" class=\"mini-map\"></div>
+        <div class="container test-layout">
+            <div class="map-container">
+                <div class="map-title only-pc">Savollar xaritasi</div>
+                <div id="indicator-map" class="mini-map"></div>
             </div>
 
-            <div class=\"question-container\">
-                <div id=\"question-list-wrapper\" class=\"q-list-wrapper\">
-                    <div id=\"all-questions-area\"></div>
-                    <div class=\"scroll-pad\"></div> 
+            <div class="question-container">
+                <div id="question-list-wrapper" class="q-list-wrapper">
+                    <div id="all-questions-area"></div>
+                    <div class="scroll-pad"></div> 
                 </div>
                 
-                <div class=\"nav-controls\">
-                    <button class=\"nav-btn\" onclick=\"move(-1)\">⬅️ Oldingi</button>
-                    <button id=\"finish-btn\" class=\"finish-btn hidden\" onclick=\"finishExam()\">Tugatish ✔️</button>
-                    <button class=\"nav-btn\" onclick=\"move(1)\">Keyingi ➡️</button>
+                <div class="nav-controls">
+                    <button class="nav-btn" onclick="move(-1)">⬅️ Oldingi</button>
+                    <button id="finish-btn" class="finish-btn hidden" onclick="finishExam()">Tugatish ✔️</button>
+                    <button class="nav-btn" onclick="move(1)">Keyingi ➡️</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src=\"script.js\"></script>
+    <script src="script.js"></script>
 </body>
 </html>

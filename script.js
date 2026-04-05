@@ -1,7 +1,7 @@
 // ==========================================
 // GOOGLE SHEETS & PWA CONFIGURATION
 // ==========================================
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmdOr6cJYGq-EKF8DDA2lYp25heJ_n4JjqHp2Tz4sswNp4viybTFDaonqA5QSv1ovf/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDYG2cR4JYLSXfLdGbgtIPNQTmyEcl43wMhDSimAE0NWD_J4Ovbfd44XvKsbUbtoek/exec";
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -24,12 +24,12 @@ function getOrCreateDeviceId() {
 async function authenticateUser() {
     const loginVal = document.getElementById('auth-login').value.trim();
     const passVal = document.getElementById('auth-password').value.trim();
-    const keygenVal = document.getElementById('auth-keygen').value.trim();
+    const keygenVal = document.getElementById('auth-keygen').value.trim(); // Yangilar uchun
     const errorEl = document.getElementById('auth-error');
     const btn = document.getElementById('btn-auth');
 
-    if(!loginVal || !passVal || !keygenVal) {
-        errorEl.innerText = "Barcha maydonlarni to'ldiring!";
+    if(!loginVal || !passVal) {
+        errorEl.innerText = "Login va Parol majburiy!";
         errorEl.classList.remove('hidden');
         return;
     }
@@ -52,7 +52,9 @@ async function authenticateUser() {
         const result = await response.json();
 
         if (result.success) {
-            document.getElementById('student-name').value = result.name;
+            localStorage.setItem('pro_exam_auth', 'true');
+            localStorage.setItem('pro_exam_name', result.name || loginVal);
+            document.getElementById('student-name').value = result.name || loginVal;
             switchScreen('auth-screen', 'welcome-screen');
         } else {
             errorEl.innerText = result.message;
@@ -67,9 +69,8 @@ async function authenticateUser() {
     }
 }
 
-
 // ==========================================
-// AUDIO, VIBRATION & PARTICLES (MAGIC TRICKS)
+// AUDIO, VIBRATION & PARTICLES 
 // ==========================================
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 function playFeedback(type) {
@@ -111,7 +112,7 @@ function closeModal(e, id) { if(e.target.id === id) document.getElementById(id).
 function closeModalDirect(id) { document.getElementById(id).style.display = 'none'; }
 
 // ==========================================
-// GLOBAL VARIABLES
+// GLOBAL VARIABLES & LOAD
 // ==========================================
 let bank = []; let currentTest = []; let userAnswers = []; let currentIndex = 0;
 let currentUser = null; let timerInterval;
@@ -142,6 +143,15 @@ async function loadData() {
 
 window.onload = () => {
     loadData();
+    
+    // AVTOMATIK KIRISH (Authni chetlab o'tish)
+    const isAuth = localStorage.getItem('pro_exam_auth');
+    if (isAuth === 'true') {
+        const savedName = localStorage.getItem('pro_exam_name') || '';
+        document.getElementById('student-name').value = savedName;
+        switchScreen('auth-screen', 'welcome-screen');
+    }
+
     if (localStorage.getItem('theme') === 'dark') document.body.classList.replace('light-mode', 'dark-mode');
 };
 
@@ -175,7 +185,12 @@ function goHome() {
     updateDashboardStats(); 
 }
 function confirmExit() { if(confirm("Testdan chiqishni xohlaysizmi?")) goHome(); }
-function logout() { if(confirm("Tizimdan chiqishni xohlaysizmi?")) location.reload(); }
+function logout() { 
+    if(confirm("Tizimdan to'liq chiqishni xohlaysizmi?")) {
+        localStorage.removeItem('pro_exam_auth');
+        location.reload(); 
+    }
+}
 
 function updateDashboardStats() {
     stats.learned = [...new Set(stats.learned)]; stats.errors = [...new Set(stats.errors)];

@@ -1,7 +1,7 @@
 // ==========================================
 // GOOGLE SHEETS & PWA CONFIGURATION
 // ==========================================
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDYG2cR4JYLSXfLdGbgtIPNQTmyEcl43wMhDSimAE0NWD_J4Ovbfd44XvKsbUbtoek/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzC4-Axk2bQsnHJYxMhzn0fblk48j2fWAheHhCxJF5as8fH-NKlIgV0-C7uO6mQfHAM/exec";
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -24,7 +24,7 @@ function getOrCreateDeviceId() {
 async function authenticateUser() {
     const loginVal = document.getElementById('auth-login').value.trim();
     const passVal = document.getElementById('auth-password').value.trim();
-    const keygenVal = document.getElementById('auth-keygen').value.trim(); // Yangilar uchun
+    const keygenVal = document.getElementById('auth-keygen').value.trim();
     const errorEl = document.getElementById('auth-error');
     const btn = document.getElementById('btn-auth');
 
@@ -70,7 +70,7 @@ async function authenticateUser() {
 }
 
 // ==========================================
-// AUDIO, VIBRATION & PARTICLES 
+// AUDIO, VIBRATION & PARTICLES (MAGIC TRICKS)
 // ==========================================
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 function playFeedback(type) {
@@ -107,12 +107,17 @@ function createParticles(event) {
     }
 }
 
-function forceCloseAllModals() { document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none'); }
+// ==========================================
+// GHOSTBUSTER (Tozalash)
+// ==========================================
+function forceCloseAllModals() {
+    document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none');
+}
 function closeModal(e, id) { if(e.target.id === id) document.getElementById(id).style.display = 'none'; }
 function closeModalDirect(id) { document.getElementById(id).style.display = 'none'; }
 
 // ==========================================
-// GLOBAL VARIABLES & LOAD
+// GLOBAL VARIABLES
 // ==========================================
 let bank = []; let currentTest = []; let userAnswers = []; let currentIndex = 0;
 let currentUser = null; let timerInterval;
@@ -120,6 +125,9 @@ let stats = JSON.parse(localStorage.getItem('adham_pro_stats')) || { learned: []
 let pendingSubject = null; let pendingLevelQs = []; let testType = null;
 let diffTime = 900; let orderMode = 'random'; let isExamMode = false;
 
+// ==========================================
+// 1. DATA YUKLASH
+// ==========================================
 async function loadData() {
     const files = ['musiqa_nazariyasi.json', 'cholgu_ijrochiligi.json', 'vokal_ijrochiligi.json', 'metodika_repertuar.json'];
     let globalId = 1;
@@ -144,7 +152,7 @@ async function loadData() {
 window.onload = () => {
     loadData();
     
-    // AVTOMATIK KIRISH (Authni chetlab o'tish)
+    // AVTOMATIK KIRISH (Login oynasini chetlab o'tish)
     const isAuth = localStorage.getItem('pro_exam_auth');
     if (isAuth === 'true') {
         const savedName = localStorage.getItem('pro_exam_name') || '';
@@ -155,6 +163,9 @@ window.onload = () => {
     if (localStorage.getItem('theme') === 'dark') document.body.classList.replace('light-mode', 'dark-mode');
 };
 
+// ==========================================
+// 2. EKRANLAR VA MENYU BOSHQRUVI
+// ==========================================
 function toggleTheme() { 
     let isDark = document.body.classList.contains('dark-mode');
     if(isDark) { document.body.classList.replace('dark-mode', 'light-mode'); localStorage.setItem('theme', 'light'); }
@@ -200,6 +211,9 @@ function updateDashboardStats() {
     document.getElementById('error-work-btn').disabled = stats.errors.length === 0;
 }
 
+// ==========================================
+// 3. LEVEL & CHAPTERS (MODALS)
+// ==========================================
 function openLevels(sub, title) {
     forceCloseAllModals(); pendingSubject = sub; document.getElementById('modal-subject-title').innerText = title;
     const grid = document.getElementById('level-grid-box'); grid.innerHTML = '';
@@ -240,6 +254,9 @@ function prepareTest(type) {
     testType = type; openSetup();
 }
 
+// ==========================================
+// 4. SETUP
+// ==========================================
 function openSetup() { forceCloseAllModals(); document.getElementById('setup-screen').style.display = 'flex'; }
 
 function setDifficulty(level, btn) {
@@ -274,6 +291,9 @@ function startExamMode() {
     currentTest = examQs.sort(() => Math.random() - 0.5); diffTime = 3600; startTestSession();
 }
 
+// ==========================================
+// 5. TEST ENGINE (BLUR LIST & SCROLL)
+// ==========================================
 function startTestSession() {
     switchScreen('dashboard-screen', 'test-screen'); document.getElementById('exit-test-btn').classList.remove('hidden'); document.getElementById('exam-timer').classList.remove('hidden');
     currentIdx = 0; currentIndex = 0; userAnswers = new Array(currentTest.length).fill(null);
@@ -362,6 +382,7 @@ function checkAns(qIdx, optIdx, event) {
     } else {
         if (!stats.errors.includes(qId)) stats.errors.push(qId);
         clickedBtn.classList.add('magic-wrong'); playFeedback('wrong');
+        // DIQQAT: Yashirin javob qoidasi - To'g'ri javob KO'RSATILMAYDI.
     }
     
     localStorage.setItem('adham_pro_stats', JSON.stringify(stats));
@@ -379,10 +400,14 @@ function checkAns(qIdx, optIdx, event) {
 function move(step) { let n = currentIndex + step; if (n >= 0 && n < currentTest.length) { currentIndex = n; updateFocus(); } }
 function goTo(i) { currentIndex = i; updateFocus(); }
 
+// ==========================================
+// 6. RESULT
+// ==========================================
 function finishExam() {
     clearInterval(timerInterval);
     let correctCount = userAnswers.filter(a => a?.isCorrect).length;
     if(!isExamMode && correctCount < currentTest.length) {
+        // EXAM mode bo'lmasa 100% yechish talab qilinadi
         alert(`Natija: ${correctCount}/${currentTest.length}. Qoidaga ko'ra, 100% to'g'ri bo'lmaguncha ushbu savollar aralashtirib qayta beriladi.`);
         currentTest = shuffleArray(currentTest).map(q => {
             let correctText = q.options[q.answer]; let shuffledOpts = shuffleArray([...q.options]);
